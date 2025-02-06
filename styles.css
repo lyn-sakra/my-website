@@ -285,3 +285,72 @@ body {
         text-align: center;
     }
 }
+
+/* Music Overlay - Requesting Permission */
+.music-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9); /* Dark serious tone */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+/* Styled Popup Box */
+.music-box {
+    background: #ffdd57;
+    padding: 25px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Boss-Level Message */
+.music-box p {
+    font-size: 1.3em;
+    color: #333;
+    font-weight: bold;
+}
+
+/* Buttons - Styled for Approval/Rejection */
+.music-box button {
+    background: #ff4b5c;
+    color: white;
+    font-size: 1.2em;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 10px;
+    transition: 0.3s;
+}
+
+.music-box button:hover {
+    background: #e63a50;
+}
+
+.music-box button:last-child {
+    background: #333;
+}
+
+.music-box button:last-child:hover {
+    background: #222;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-10px); }
+    50% { transform: translateX(10px); }
+    75% { transform: translateX(-5px); }
+}
+
+.shake {
+    animation: shake 0.5s ease-in-out;
+    background: #ff4b5c !important; /* Turns red before disappearing */
+    color: white;
+}
