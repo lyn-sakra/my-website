@@ -1,0 +1,287 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap');
+
+
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    background: linear-gradient(to bottom, #ffdde1, #ee9ca7);
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Section Styling */
+.section {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Floating Hearts - More Frequent & Smooth */
+@keyframes floatHearts {
+    0% { transform: translateY(100vh) scale(1); opacity: 1; }
+    100% { transform: translateY(-100vh) scale(0.7); opacity: 0; }
+}
+
+.heart {
+    position: absolute;
+    font-size: 25px;
+    opacity: 0.8;
+    animation: floatHearts 10s infinite linear;
+}
+
+/* Small Go Down Message */
+.go-down-message {
+    font-size: 1.2em;
+    color: #ff4b5c;
+    font-weight: bold;
+    margin-top: 20px;
+    opacity: 0.8;
+    animation: fadeIn 2s infinite alternate;
+}
+
+/* Fade-in Effect */
+@keyframes fadeIn {
+    0% { opacity: 0.5; }
+    100% { opacity: 1; }
+}
+
+/* Buttons Styling */
+.buttons button {
+    font-size: 1.8em;
+    padding: 15px 30px;
+    margin: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 50px;
+    transition: 0.3s;
+}
+
+#yesBtn {
+    background-color: #ff4b5c;
+    color: white;
+}
+
+#noBtn {
+    background-color: #333;
+    color: white;
+}
+
+/* Floating Yes Buttons */
+.floating-button {
+    position: absolute;
+    font-size: 1.5em;
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: #ff4b5c;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+.floating-button:hover {
+    transform: scale(1.1);
+}
+
+/* Popup - Yellow/Gold Theme */
+#popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6); /* Dark backdrop */
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+/* Popup Content Box */
+.popup-content {
+    background: linear-gradient(to bottom, #ffdd57, #ffbb33); /* Gold gradient */
+    padding: 30px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0px 6px 15px rgba(255, 193, 7, 0.5);
+    max-width: 500px;
+    animation: popupFadeIn 0.5s ease-in-out;
+}
+
+/* Close Button */
+/* .close-button {
+    font-size: 24px;
+    font-weight: bold;
+    color: #4a4a4a;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+} */
+
+/* Popup Heading */
+.popup-content h2 {
+    font-size: 2em;
+    color: #4a4a4a; /* Dark shade for contrast */
+}
+
+/* Popup Paragraph */
+.popup-content p {
+    font-size: 1.3em;
+    color: #4a4a4a;
+    margin-top: 10px;
+    font-family: 'Dancing Script', cursive;
+}
+
+/* Glow Effect */
+@keyframes popupFadeIn {
+    0% { opacity: 0; transform: scale(0.8); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+
+/* Popup */
+/* #popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+} */
+
+/* .popup-content {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+    max-width: 500px;
+} */
+
+/* Fireworks Effect */
+@keyframes explode {
+    0% { transform: scale(0); opacity: 1; }
+    100% { transform: scale(1.5); opacity: 0; }
+}
+
+.firework {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: radial-gradient(circle, #ffdd57, #ff4b5c);
+    border-radius: 50%;
+    animation: explode 2s ease-out;
+}
+
+
+.section h1 {
+    font-size: 2.8em;
+    color: black;
+    text-shadow: 1px 1px 5px rgba(56, 24, 27, 0.7);
+    margin-bottom: 20px;
+    text-align: center;
+    width: 100%;
+}
+
+/* Image & Text Container */
+.content-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 80%;
+    gap: 30px;
+}
+
+/* Image Styling - Romantic Curved Look */
+.image-container {
+    flex: 1;
+    /* display: flex;
+    flex-direction: column;
+    gap: 15px; */
+}
+
+.section-img {
+    width: 100%;
+    max-width: 280px;
+    height: auto;
+    border-radius: 20px;
+    object-fit: cover;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+    /* transition: transform 0.3s ease-in-out; */
+}
+
+/* .section-img:hover {
+    transform: scale(1.05);
+} */
+
+/* Text Container */
+.text-container {
+    flex: 1;
+    text-align: left;
+}
+
+/* Handwritten Paragraph Styling */
+.text-container p {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.5em;
+    color: #4a4a4a;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 20px;
+    border-radius: 15px;
+    line-height: 1.7;
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Bold & Shiny Effect for <b> */
+.text-container p b {
+    font-weight: 700;
+    color: #ff4b5c;
+    text-shadow: 1px 1px 5px rgba(255, 75, 92, 0.7);
+}
+
+/* Keep 'Go Down Message' Unchanged */
+.go-down-message {
+    font-size: 1.2em;
+    color: #ff4b5c;
+    font-weight: bold;
+    margin-top: 20px;
+    opacity: 0.8;
+    animation: fadeIn 2s infinite alternate;
+    text-align: center;
+}
+
+/* Responsive Fix */
+@media (max-width: 768px) {
+    .content-wrapper {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .image-container {
+        max-width: 90%;
+        align-items: center;
+    }
+
+    .section-img {
+        max-width: 250px;
+    }
+
+    .text-container {
+        max-width: 90%;
+        text-align: center;
+    }
+}
