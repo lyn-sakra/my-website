@@ -10,6 +10,15 @@
     <script defer src="script.js"></script>
 </head>
 <body>
+
+    <div id="musicPrompt" class="music-overlay">
+        <div class="music-box">
+            <p><b>General, we need your approval ! 🎖️</b></p>
+            <p><b>Can we please move ahead ? </b></p>
+        <button onclick="startMusic()">Permission Granted ✅</button>
+        <button onclick="denyMusic()">Permission Denied ❌</button>
+        </div>
+    </div>
     <audio id="bgMusic" autoplay loop>
         <source src="backgroundMusic.mp3" type="audio/mpeg">
         Your browser does not support the audio tag.
