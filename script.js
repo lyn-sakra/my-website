@@ -55,8 +55,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     yesBtn.addEventListener("click", function () {
         popupMessage.innerHTML = noClicked
-            ? "😡 How dare you click NO! 😝<br><br>Thank you for making me the luckiest guy!"
-            : "Thank you for making me the luckiest guy!";
+            ? "😡 How dare you click NO! <br>You do not have any other option, you are stuck with me now for this LIFE !😝"
+            : "Thank you for making me the luckiest guy! 😇";
 
         popup.style.display = "flex";
         bgMusic.pause(); // Stop background music
@@ -68,9 +68,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
     window.closePopup = function () {
         popup.style.display = "none";
-        newSong.pause(); // Stop "Yellow" when popup is closed
-        newSong.currentTime = 0; // Reset the song to the beginning
-        bgMusic.play();
+        newSong.pause();
+        newSong.currentTime = 0;
+    
+        // Reload the page and force it to start from the top
+        setTimeout(() => {
+            window.scrollTo(0, 0);
+            location.reload();
+        }, 300); // Small delay for a smoother transition
     };
 
     function triggerFireworks() {
