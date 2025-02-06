@@ -88,4 +88,32 @@ document.addEventListener("DOMContentLoaded", function () {
             }, 2000);
         }
     }
+
+    window.startMusic = function() {
+        const bgMusic = document.getElementById("bgMusic");
+        const musicPrompt = document.getElementById("musicPrompt");
+    
+        bgMusic.play().catch(error => console.log("Autoplay blocked:", error)); // Try playing, catch errors
+        musicPrompt.style.display = "none"; // Hide the prompt
+    };
+
+    window.denyMusic = function() {
+        const musicPrompt = document.getElementById("musicPrompt");
+        const bgMusic = document.getElementById("bgMusic");
+        // Fun alert message when denying permission
+        alert("❌ ACCESS DENIED ❌\nGeneral is not in good mood...\n We will proceed Later !!");
+    
+        //bgMusic.play().catch(error => console.log("Autoplay blocked:", error)); // Try playing, catch errors
+        // Make the popup shake before disappearing
+        musicPrompt.classList.add("shake");
+        setTimeout(() => {
+            musicPrompt.style.display = "none";
+        }, 1000);
+
+        setTimeout(() => {
+            //alert("📢 The General has reconsidered... Try again!");
+            musicPrompt.style.display = "flex";
+            musicPrompt.classList.remove("shake");
+        }, 1500);
+    };
 });
