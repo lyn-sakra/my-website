@@ -109,6 +109,7 @@ body {
 
 /* Popup Content Box */
 .popup-content {
+    position: relative;
     background: linear-gradient(to bottom, #ffdd57, #ffbb33); /* Gold gradient */
     padding: 30px;
     border-radius: 20px;
@@ -353,4 +354,26 @@ body {
     animation: shake 0.5s ease-in-out;
     background: #ff4b5c !important; /* Turns red before disappearing */
     color: white;
+}
+
+/* Improved Close Button for Popup */
+.close-button {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: #ff4b5c;
+    border: none;
+    padding: 5px 12px;
+    border-radius: 50%;
+    transition: transform 0.3s ease-in-out, background 0.3s ease-in-out;
+}
+
+/* Hover Effect */
+.close-button:hover {
+    transform: scale(1.2);
+    background: #e63a50;
 }
