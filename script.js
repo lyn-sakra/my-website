@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const popupMessage = document.getElementById("popupMessage");
     const bgMusic = document.getElementById("bgMusic"); // Background music (looping)
     const newSong = document.getElementById("newSong"); // "Yellow" song
-
+    bgMusic.play(); 
     function createFloatingHeart() {
         const heart = document.createElement("span");
         heart.classList.add("heart");
