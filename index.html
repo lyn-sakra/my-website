@@ -1,184 +1,146 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Anniversary & Valentine’s Day</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="icon" href="favicon-32x32.png" type="image/png">
-
-    <script defer src="script.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Sky Story</title>
+  <link rel="icon" href="favicon-32x32.png" type="image/png">
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Poppins&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 </head>
 <body>
 
-    <div id="musicPrompt" class="music-overlay">
-        <div class="music-box">
-            <p><b>General, we need your approval ! 🎖️</b></p>
-            <p><b>Can we please move ahead ? </b></p>
-        <button onclick="startMusic()">Permission Granted ✅</button>
-        <button onclick="denyMusic()">Permission Denied ❌</button>
-        </div>
+  <div id="intro-overlay">
+    <div class="intro-content">
+      <h2>Ready to share more memories</h2>
+      <p>Click anywhere to begin the journey...</p>
     </div>
-    <audio id="bgMusic" autoplay loop>
-        <source src="backgroundMusic.mp3" type="audio/mpeg">
-        Your browser does not support the audio tag.
-    </audio>
+  </div>
+  
+  <section class="sky-section sunrise">
+    <h1>Celebrating 6 Months of Love 💫</h1>
+<p>
+Every story has a beginning.  
+Ours began with sunshine in BALI — and it’s only getting brighter & brighter.
+<br><br>
+Six months of love, laughter, growth, and holding on through every high and low.  
+And now, with hearts full and so much still to look forward to…  
+we’re finally just a few steps away from *us* — for real.
+<br><br>
+Here’s to the hugs that waited, the smiles that stayed, the lips that have gone unkissed, 
+the Chiggy-Chiggy we desired, the coziness that we missed, the warmth long due, 
+and all the celebrations we’ve saved up.  
+We’ll make up for every missed moment — soon, together.  
+1/2 year done and 1/2 more to go. ✨
+</p>
 
-    <!-- Floating Hearts Container -->
-    <div id="hearts-container"></div>
+    <div class="sun"></div>
+    <div class="sparkles"></div>
+  </section>
 
+  <section class="sky-section fly">
+    <h1>I Believe I Can FLY 🕊️</h1>
+    <p>Not only we will sing this together bacha but also we will make it happen.
+    <br><br>
+    We’ll soar together, chasing dreams, hitting milestones, and building a life that’s ours in every sense. Not just professionally but also personally — by show up for each other, every single day. Growing 1% at a time — in our careers, in our hearts, in how we love, care, and become better for one another.
+    <br><br>
+    We’ll collect memories like souvenirs — from the places we will explore, the things we will try, adding new adventures and experiences like our BALI trip. And when life gets heavy, we’ll lift each other. When one forgets how to fly, the other will remind them how.
+    <br><br>
+    Because we’re not just building a future — we’re building each other. With kindness, with patience, with laughter, and with that steady kind of love that doesn’t fade away.
+    <br><br>
+    And soon, we’ll begin the next chapter — no more distance, no more screens. Just us, together — where we’ve always belonged.
+    </p>
+    
 
+    <div class="sunbeam-overlay"></div>
+    <div class="clouds">
+      <div class="cloud size-sm speed-slow" style="top: 10%; left: -10vw;"></div>
+      <div class="cloud size-md speed-med" style="top: 25%; left: -20vw;"></div>
+      <div class="cloud size-lg speed-fast" style="top: 40%; left: -15vw;"></div>
+      <div class="cloud size-sm speed-fast" style="top: 60%; left: -5vw;"></div>
+      <div class="cloud size-md speed-slow" style="top: 75%; left: -30vw;"></div>
+      <div class="cloud size-lg speed-med" style="top: 50%; left: -25vw;"></div>
+    </div>
+    
+  </section>
 
-    <div class="section" id="intro">
-        <h1>Our Journey Together ❤️</h1>
-        <div class="content-wrapper">
-            <div class="image-container">
-                <img src="image0.jpeg" class="section-img">
-            </div>
-            
-            <div class="text-container">
-                
-                <p>Hello <b>Love ❤️</b>,
-                    <br>
-                    Today happens to be our third month Anniversary. How time is flying ✈️, it feels like yesterday when we were in Delhi and discussing about our future.<br>
-                    It feels so surreal to think about how far we have come and how much we have grown together. 
-                    We have completed a quarter of a year together, and I can't wait to spend many more months and years with you.
-                    <br>
-                    <b>Happy Anniversary, my love. 💖 </b><br>
-                    <br>
+  <!-- <section class="sky-section gift">
+    <h1>A Gift from the Sky 🎁</h1>
+    <p>Every moment with you feels wrapped in magic.</p>
+    <div class="balloon"></div>
+  </section> -->
+
+  <section class="sky-section storm">
+    <h1>We weathered the STORM too🌩️</h1>
+<p>
+We've had our share of difficult nights too full of misunderstandings, heated moments, and a few tough days. But through it all, we’ve remained side by side, stronger and more grounded. There were no moments of doubt, only questions that needed answers, and times we just wanted reassurance and maybe HUGs. And yet, here we are—still standing, still growing.
+<br><br>
+There were no second thoughts, no reconsiderations, no doubts —just two people holding on with love and commitment. There willl be fights, as you say, add that spark, that ‘masala’ to what we share. But more than anything, we choose to fight for <b>"US"</b> —for what we have and what we’re building together.
+Let us not fight <b>"WITH"</b> each other (for sure we will - I cannot deny you that privilige that fun ) but let us fight <b>"FOR"</b> each other. 
+<br><br>
+Moving forward, we’ll remember not to let anger or hurt justify words or actions that can leave scars or damages like STORM. Instead, we’ll remind ourselves to stand beside each other—no matter the storm. Because no cloud, no matter how dark, can dim the light we’ve created together.
+</p>
+
+    <div class="lightning"></div>
+  </section>
+
+  <section class="sky-section night">
+    <h1>Happy Anniversary my Love.</h1>
+    <p>
+      Let us celebrate this milestone, completing 6 months together and let us keep on moving forward 
+      together. 
+      From here on, the path ahead is beautifully uncertain - but it is on us, to shape, 
+      to fill with new memories, kindness and love.
+      So let us move to next chapter with tons of love and respect, holding hands and guiding each other.<br>
+      The night may be long, but it's ours — and it's beautiful.
+      <br>
+      <br>
+      Also, something is hidden in this website - just a click away all you have to do is find it.
+      <br>
+      If you can find it, your gift awaits.
+      If not then do not blame me. I can only say that you would love it. Now show your <b>Sherlock Holmes</b> skills.
+    </p>
+    <div class="stars"></div>
+    <div class="moon"></div>
+    <!-- <button class="cta-button">Let’s keep flying →</button> -->
+
+    <div class="gift-popup-overlay hidden">
+      <div class="gift-popup-modal">
         
-                </p>
-            </div>
+    
+        <div class="gift-content hidden">
+          <h2>🌙 A Gift from the Moon</h2>
+          <p>Yayyyy !! You Sherlock Holmes  !!! 
+            Remember how you casually mentioned my <b>DIOR POISON is almost finished?</b>
+So here is your gift Chang Mang.<br>
+It’s here — almost LoL. It’s in India, just not with me yet.
+I had asked my friend to bring it from USA, and if he visits Bangalore, he’ll bring it along.
+If not, I’ll have it shipped to me — so do not worry.
+<br>
+That’s why I told you not to pack your perfume the other day 😉
+<br>
+I’ll keep you posted before your visit to INDIA, just to be safe.
+But yeah… I just wanted you to know —
+I’m listening, always.
+Even to the tiniest things you say.
+
+          </p>
+          <img src="perfume.jpg" alt="Gift" class="gift-image" />
+          <button id="close-gift" class="cta-button">Close</button>
         </div>
-        <p class="go-down-message">The story isn’t over yet… please keep scrolling ⬇️</p>
+      </div>
     </div>
+    
+  </section>
+
+  
+  
+  
+  <audio id="backgroundMusic" src="backgroundMusic.mp3" loop></audio>
+<audio id="hiddenMusic" src="hiddenMusic.mp3"></audio>
 
 
-    <div class="section" id="intro">
-        <h1>Today happens to be Valentine’s Day too 💘</h1>
-        <div class="content-wrapper">
-            <div class="image-container">
-                <img src="image2.jpeg" class="section-img">
-            </div>
-            
-            <div class="text-container">
-                
-                <p>A very <b>Happy Valentine’s Day</b> my <b>Love </b>
-                    This one is a special Anniversary because it comes with Valuntine's Day too and our first valentine together.
-                    Truth be told I used to be less of a celebrator, but being with you has made me realize how wonderful it feels to celebrate even small small things.
-                    <br>
-                    But do not worry I won't limit Love to just this day or our Anniversary, I want to cherish and celebrate it every day with you
-                    and not just by grand gestures, but also with little moments that we share every day. 
-                    
-                </p>
-            </div>
-        </div>
-        <p class="go-down-message">A little more… please keep scrolling ⬇️</p>
-        
-    </div>
-
-
-
-    <div class="section" id="intro">
-        <h1>Why You’re Amazing 💖</h1>
-        <div class="content-wrapper">
-            <div class="image-container">
-                <img src="image1.jpeg" class="section-img">
-            </div>
-            
-            <div class="text-container">
-                
-                <p>Answer is very simple because It is me ( <b>Lyngu</b> ) 😂. <br>
-                    So here are some reasons why you make my heart skip a beat...<br>
-        
-                    Your enthusiasm after your work to talk to me, always ready to listen to your Professor, 
-                    and how you want to do things which include me, be it having dinner, making a planner, take shower, watching a movie, watching reels or just sharing gossip.
-                    <br>
-                    You really make me feel special and valued, and I can see how much you care about me and my emotions and just want to  make me feel that yes I do matter in your life.
-                    <br>So really thank you from bottom of my heart for everything....
-                    </p>
-            </div>
-        </div>
-        <p class="go-down-message">It is not over yet… please keep scrolling ⬇️</p>
-        
-    </div>
-
-    <div class="section" id="intro">
-        <h1>A recent heart touching instance🥺</h1>
-        <div class="content-wrapper">
-            <div class="image-container">
-                <img src="IMG_9937.jpeg" class="section-img">
-            </div>
-            
-            <div class="text-container">
-                
-                <p>
-                You remember recently during that new job little fasad we had and you said something which touched my heart<br>
-                <b>" You are my man, I will tell you to do like that, If I have to I will say it." </b>
-                    This touched me to a level you have no idea - I have told you <b>"Hakk Jamao"</b> on me. Keep this in car, do this in room, 
-                    we will go to IKEA to change the room. Impacted something emotionally tell me to fix it. I just love these as it makes me feel,
-                    you are making your place in my world, piece by piece.
-                    It's a beautiful, unspoken way of saying, <b>"I'm a part of you, and you're a part of me."</b>
-
-                </p>
-            </div>
-        </div>
-        <p class="go-down-message">Enough of Sentimental talks .... a little more scroll please ⬇️</p>
-        
-    </div>
-
-
-    <div class="section" id="intro">
-        <h1>Okay, but something is missing 🔎</h1>
-        <div class="content-wrapper">
-            <div class="image-container">
-                <img src="suspectImage.jpeg" class="section-img">
-            </div>
-            
-            <div class="text-container">
-                
-                <p>Wait a minute, He has officially asked you to be his girlfriend ( 14th December 2024 ), but has he asked you to be his Valentine ?????? 🤔<br>
-                    Then how come he is wishing you Happy Valentine's Day ???? 🤔🤔🤔<br>
-                    Your are 💯 correct, your man is quite smart but then sometimes he acts like a <b>CHUTIYA.</b>
-                    But do remember he is your <b>CHUTIYA</b> <br>
-                    But today I want to ask you something, and I want you to answer it honestly. <br>
-                    <br>
-                    I know you are my <b>girlfriend, my future wife, my love, my life, my everything,</b> but ... 
-                    
-                </p>
-            </div>
-        </div>
-        <p class="go-down-message">So the questions is .... a little more scroll please ⬇️</p>
-        
-    </div>
-
-
-    <!-- Section 4: Final Question -->
-    <div class="section" id="finalQuestion">
-        <h1>Will You Please Be My Valentines Too ? 💕</h1>
-        <div class="buttons">
-            <button id="yesBtn">Yes 💖</button>
-            <button id="noBtn">No 😢</button>
-        </div>
-    </div>
-
-    <!-- Popup Modal (Initially Hidden) -->
-    <div id="popup" class="hidden">
-        <div class="popup-content">
-            <!-- <span class="close-button" onclick="closePopup()">&times;</span> -->
-            <button class="close-button" onclick="closePopup()">✖</button>
-            <h2 id="popupMessage"></h2>
-            <p>My Lyngu you mean the world to me, and I can't wait to make more beautiful memories with you! 💕</p>
-            <p>A magical candlelit dinner awaits for you tonight, my love. 🌹✨ <br>
-            After you’re free from work,
-            I’ll be ready to make this evening as special as you are. <br>
-            You, me, and a night filled with love. 💖🔥
-        Happy Anniversary and Valeintes Day My Soulmate✨</p>
-            <audio id="newSong" controls>
-                <source src="Yellow.mp3" type="audio/mpeg">
-                Your browser does not support the audio tag.
-            </audio>
-        </div>
-    </div>
+  <script src="script.js"></script>
 </body>
 </html>

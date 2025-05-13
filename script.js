@@ -1,124 +1,172 @@
-document.addEventListener("DOMContentLoaded", function () {
-    const yesBtn = document.getElementById("yesBtn");
-    const noBtn = document.getElementById("noBtn");
-    const popup = document.getElementById("popup");
-    const popupMessage = document.getElementById("popupMessage");
-    const bgMusic = document.getElementById("bgMusic"); // Background music (looping)
-    const newSong = document.getElementById("newSong"); // "Yellow" song
-    
-    function createFloatingHeart() {
-        const heart = document.createElement("span");
-        heart.classList.add("heart");
-        heart.textContent = ["❤️", "💖", "💕", "💘", "💞"][Math.floor(Math.random() * 5)];
-        heart.style.left = Math.random() * 100 + "vw";
-        heart.style.animationDuration = (7 + Math.random() * 3) + "s";
 
-        document.querySelectorAll(".section").forEach(section => {
-            const clone = heart.cloneNode(true);
-            section.appendChild(clone);
+function lightningEffect() {
+  const lightning = document.querySelector('.storm .lightning');
+  setInterval(() => {
+    lightning.style.opacity = '0.8';
+    setTimeout(() => lightning.style.opacity = '0', 100);
+  }, 4000 + Math.random() * 4000);
+}
 
-            setTimeout(() => {
-                clone.remove();
-            }, 10000);
-        });
+function showGiftSection() {
+  const giftSection = document.querySelector('.gift');
+  giftSection.style.display = 'block'; // Show the gift section on moon click
+}
+
+function generateStars(count = 80) {
+  const starsContainer = document.querySelector('.night .stars');
+  for (let i = 0; i < count; i++) {
+    const star = document.createElement('div');
+    star.classList.add('star');
+    star.style.top = `${Math.random() * 100}vh`;
+    star.style.left = `${Math.random() * 100}vw`;
+    star.style.animationDelay = `${Math.random() * 3}s`;
+    starsContainer.appendChild(star);
+  }
+}
+
+function generateRain(count = 60) {
+    const stormSection = document.querySelector('.storm');
+    for (let i = 0; i < count; i++) {
+      const drop = document.createElement('div');
+      drop.classList.add('raindrop');
+      drop.style.left = `${Math.random() * 100}vw`;
+      drop.style.top = `${Math.random() * 100}vh`;
+      drop.style.animationDuration = `${0.8 + Math.random() * 0.5}s`;
+      drop.style.animationDelay = `${Math.random() * 3}s`;
+      drop.style.position = 'absolute';
+      drop.style.zIndex = 1;
+      stormSection.appendChild(drop);
     }
+  }
+  
 
-    setInterval(createFloatingHeart, 500);
+document.addEventListener("DOMContentLoaded", () => {
+    generateRain();
+  });
+  
 
-    let noClicked = false;
-
-    noBtn.addEventListener("click", function () {
-        noClicked = true;
-
-        for (let i = 0; i < 5; i++) {
-            let newYesBtn = document.createElement("button");
-            newYesBtn.textContent = "Yes 💖";
-            newYesBtn.classList.add("floating-button");
-
-            let rect = noBtn.getBoundingClientRect();
-            newYesBtn.style.position = "absolute";
-            newYesBtn.style.top = rect.top + window.scrollY + Math.random() * 10 - 5 + "px";
-            newYesBtn.style.left = rect.left + window.scrollX + Math.random() * 40 - 20 + "px";
-
-            newYesBtn.addEventListener("click", function () {
-                document.querySelectorAll(".floating-button").forEach(btn => btn.remove());
-                yesBtn.click();
-            });
-
-            document.body.appendChild(newYesBtn);
-        }
-
-        setTimeout(() => {
-            noBtn.style.display = "none";
-        }, 3000);
-    });
-
-    yesBtn.addEventListener("click", function () {
-        popupMessage.innerHTML = noClicked
-            ? "😡 How dare you click NO! <br>You do not have any other option, you are stuck with me now for this LIFE !😝"
-            : "Thank you for making me the luckiest guy! 😇";
-
-        popup.style.display = "flex";
-        bgMusic.pause(); // Stop background music
-        newSong.currentTime = 0; // Ensure song starts from the beginning
-        newSong.play(); // Play "Yellow"
-
-        triggerFireworks(); // Fireworks on Yes click
-    });
-
-    window.closePopup = function () {
-        popup.style.display = "none";
-        newSong.pause();
-        newSong.currentTime = 0;
-    
-        // Reload the page and force it to start from the top
-        setTimeout(() => {
-            window.scrollTo(0, 0);
-            location.reload();
-        }, 300); // Small delay for a smoother transition
-    };
-
-    function triggerFireworks() {
-        for (let i = 0; i < 10; i++) {
-            let firework = document.createElement("div");
-            firework.classList.add("firework");
-
-            firework.style.left = Math.random() * 100 + "vw";
-            firework.style.top = Math.random() * 80 + "vh";
-
-            document.body.appendChild(firework);
-
-            setTimeout(() => {
-                firework.remove();
-            }, 2000);
-        }
-    }
-
-    window.startMusic = function() {
-        const bgMusic = document.getElementById("bgMusic");
-        const musicPrompt = document.getElementById("musicPrompt");
-    
-        bgMusic.play().catch(error => console.log("Autoplay blocked:", error)); // Try playing, catch errors
-        musicPrompt.style.display = "none"; // Hide the prompt
-    };
-
-    window.denyMusic = function() {
-        const musicPrompt = document.getElementById("musicPrompt");
-        const bgMusic = document.getElementById("bgMusic");
-        // Fun alert message when denying permission
-        alert("❌ ACCESS DENIED ❌\nGeneral is not in good mood...\n We will proceed Later !!");
-    
-        //bgMusic.play().catch(error => console.log("Autoplay blocked:", error)); // Try playing, catch errors
-        // Make the popup shake before disappearing
-        musicPrompt.classList.add("shake");
-        setTimeout(() => {
-            musicPrompt.style.display = "none";
-        }, 1000);
-
-        setTimeout(() => {
-            //alert("📢 The General has reconsidered... Try again!");
-            musicPrompt.style.display = "flex";
-            musicPrompt.classList.remove("shake");
-        }, 1500);
-    };
+document.addEventListener('DOMContentLoaded', () => {
+  lightningEffect();
+  generateStars(80);
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  const moon = document.querySelector(".moon");
+  const overlay = document.querySelector(".gift-popup-overlay");
+  const content = document.querySelector(".gift-content");
+  const closeBtn = document.getElementById("close-gift");
+  const audio = new Audio("hiddenMusic.mp3");
+
+  moon.style.cursor = "pointer";
+
+  moon.addEventListener("click", () => {
+    overlay.classList.remove("hidden");
+    audio.play();
+
+    // 🎉 Confetti burst on moon click
+    // confetti({
+    //   particleCount: 150,
+    //   spread: 120,
+    //   origin: { y: 0.6 },
+    // });
+
+    // Classic center-top burst
+confetti({ particleCount: 80, spread: 100, origin: { y: 0.6 } });
+
+// Side bursts (like celebration walls)
+confetti({ particleCount: 40, spread: 70, origin: { x: 0.1, y: 0.6 } });
+confetti({ particleCount: 40, spread: 70, origin: { x: 0.9, y: 0.6 } });
+
+
+    // Reveal content after delay
+    setTimeout(() => {
+      content.classList.remove("hidden");
+      content.classList.add("show");
+    }, 1500);
+  });
+
+  closeBtn.addEventListener("click", () => {
+    overlay.classList.add("hidden");
+    content.classList.add("hidden");
+    content.classList.remove("show");
+    audio.pause();
+    audio.currentTime = 0;
+  });
+});
+
+
+
+
+// Existing confetti or intro overlay logic (unchanged)
+window.addEventListener("DOMContentLoaded", () => {
+  const overlay = document.getElementById("intro-overlay");
+  if (overlay) {
+    document.addEventListener("click", () => {
+      overlay.style.display = "none";
+    }, { once: true });
+  }
+
+  // Music and popup logic starts here
+  const backgroundMusic = document.getElementById("backgroundMusic");
+  const hiddenMusic = document.getElementById("hiddenMusic");
+  const giftPopupOverlay = document.querySelector(".gift-popup-overlay");
+  const moon = document.querySelector(".moon");
+  const closeGiftBtn = document.getElementById("close-gift");
+  const giftContent = document.querySelector(".gift-content");
+
+  let backgroundMusicWasPlaying = false;
+  let hasUserInteracted = false;
+
+  // Play background music once user interacts
+  const startMusicOnInteraction = () => {
+    if (!hasUserInteracted) {
+      hasUserInteracted = true;
+      if (backgroundMusic) {
+        backgroundMusic.play().catch(() => {
+          console.warn("Autoplay blocked, user interaction needed.");
+        });
+      }
+    }
+  };
+  document.addEventListener("click", startMusicOnInteraction, { once: true });
+
+  // Moon click → open gift popup, pause background music, play hidden music
+  moon?.addEventListener("click", () => {
+    if (!giftPopupOverlay || !giftContent) return;
+  
+    if (backgroundMusic && !backgroundMusic.paused) {
+      backgroundMusic.pause();
+      backgroundMusicWasPlaying = true;
+    } else {
+      backgroundMusicWasPlaying = false;
+    }
+  
+    giftPopupOverlay.classList.remove("hidden");
+    giftContent.classList.remove("hidden");
+  
+    if (hiddenMusic && hiddenMusic.paused) {
+      hiddenMusic.currentTime = 0;
+      hiddenMusic.play().catch(() => {});
+    }
+  });
+  
+
+  // Close popup → stop hidden music, resume background music
+  closeGiftBtn?.addEventListener("click", () => {
+    if (hiddenMusic) {
+      hiddenMusic.pause();
+      hiddenMusic.currentTime = 0;
+    }
+
+    if (giftPopupOverlay && giftContent) {
+      giftPopupOverlay.classList.add("hidden");
+      giftContent.classList.add("hidden");
+    }
+
+    if (backgroundMusicWasPlaying && backgroundMusic) {
+      backgroundMusic.currentTime = 0;
+      backgroundMusic.play().catch(() => {});
+    }
+  });
+});
+
